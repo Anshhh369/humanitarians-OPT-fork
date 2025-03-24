@@ -60,7 +60,7 @@ def vector_db():
         elif file_extension == "docx":
             loader = Docx2txtLoader(path)
         elif file_extension == "xlsx":
-            loader = UnstructuredExcelLoader(path, mode="elements")
+            loader = UnstructuredExcelLoader(path)
 
         # elif file_extension == "pptx":
         #     loader = UnstructuredPowerPointLoader(path)
