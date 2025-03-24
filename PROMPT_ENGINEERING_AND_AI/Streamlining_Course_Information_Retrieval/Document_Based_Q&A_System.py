@@ -10,7 +10,7 @@ import streamlit as st
 from langchain.text_splitter import Language, RecursiveCharacterTextSplitter
 from langchain_core.prompts import ChatPromptTemplate
 from langchain.chains import ConversationalRetrievalChain, RetrievalQA
-from langchain_community.document_loaders import PyPDFLoader,Docx2txtLoader, UnstructuredPowerPointLoader
+from langchain_community.document_loaders import PyPDFLoader,Docx2txtLoader, UnstructuredPowerPointLoader, UnstructuredExcelLoader
 import os.path
 import pathlib
 import tempfile
@@ -59,6 +59,9 @@ def vector_db():
             loader = PyPDFLoader(path)
         elif file_extension == "docx":
             loader = Docx2txtLoader(path)
+        elif file_extension == "xlsx":
+            loader = UnstructuredExcelLoader(path, mode="elements")
+
         # elif file_extension == "pptx":
         #     loader = UnstructuredPowerPointLoader(path)
 
