@@ -7,4 +7,5 @@ PyPDF
 pinecone-client
 langchain-community
 docx2txt
-unstructured openpyxl
+unstructured 
+openpyxl
